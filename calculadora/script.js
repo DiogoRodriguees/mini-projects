@@ -11,15 +11,8 @@ let numeroAnterior;
 const operacaoPendente = () =>  operador !== undefined;
 
 const calcular = () => {
-
-    console.log(`numero anterior: ${numeroAnterior}`)
-    console.log(`numero operador: ${operador}`)
-
     if (operacaoPendente()) {
-        console.log('to aqui')
         const numeroAtual = parseFloat(display.textContent.replace('.', '').replace(',', '.'));
-        console.log(`Display${display.textContent}`)
-        console.log(`Numero atual${numeroAtual}`)
         novoNumero = true
         const resultado = eval(`${numeroAnterior}${operador}${numeroAtual}`);
         atualizarDisplay(resultado)
