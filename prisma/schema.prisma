@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Entrada {
+  id        Int    @id @default(autoincrement())
+  tipo      String
+  valor     Float
+  descricao String
+
+  create_at DateTime @default(now())
+
+  @@map("entrada")
+}
+
+model Saida {
+  id        Int    @id @default(autoincrement())
+  tipo      String
+  valor     Float
+  descricao String
+
+  create_at DateTime @default(now())
+
+  @@map("saida")
+}
