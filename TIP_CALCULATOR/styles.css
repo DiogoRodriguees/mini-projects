@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=lato:300,400,500|pt++Mono);
+:root {
+    --primary-color: lightcoral;
+    /* cor primaria */
+    --secondary-color: DimGrey;
+    /* cor secundaria */
+    --tertiary-color: GainsBoro;
+    /* cor terciaria */
+}
+
+body {
+    /* cor do fundo */
+    background-color: var(--primary-color);
+    /* tamanho da fonte padrao, apenas para paragrafos bnao definidos */
+    font-size: 15px;
+    /* tipo da fonte */
+    font-family: Lato, sans-serif;
+}
+
+#container {
+    /* altura */
+    height: 525px;
+    /* largura */
+    width: 360px;
+    /* tamanho da margem(automatica) */
+    margin: 100px auto;
+    /* Cor do fundo */
+    background-color: #f7f7f7;
+    /* Sombras */
+    /* box-shadow: 3px 3px 3px var(--tertiary-color); */
+    /* Bodas */
+    border-radius: 20px;
+}
+
+.title {
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: normal;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: center;
+}
+
+.tipsForm {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.inputForm {
+    background-color: white;
+    width: 40px;
+    padding: 5px 5px 5px 5px;
+}
+
+.inputForm:focus {
+    border: 3px solid var(--primary-color);
+    outline: none;
+}
+
+.inputSelect {
+    width: 180px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.formSubmit {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin: 30px auto;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    font-size: 17px;
+    color: white
+}
+
+#totalTip {
+    font-size: 20px;
+    margin-top: 5px;
+    text-align: center;
+}

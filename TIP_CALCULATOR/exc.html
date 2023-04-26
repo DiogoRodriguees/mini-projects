@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- idioma da codificaçao -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- compatibilidade mobile -->
+    <title>Calculadora de Gorjetas</title>
+    <!-- nome da pagina -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- importando o css do arquivo "styles.css" -->
+</head>
+
+<body>
+    <div id="container">
+        <!-- div do css -->
+        <div>
+            <!-- titulo da pagina -->
+            <h1 class="title">Calculado de Gorjetas</h1>
+        </div>
+
+        <div>
+            <form class="tipsForm" id="tipsForm">
+                <label for="bill">
+                    <p>Quanto Ficou a Conta?</p>    
+                </label>
+
+                <p>
+                    <!-- (26)-Recebe o valor da conta R$ -->
+                    R$ <input type="number" placeholder="100" name="bill" id="bill" class="inputForm" required>
+                </p>
+
+                <label for="serviceBill">
+                    <p>
+                        Como foi o seu serviço?
+                    </p>
+                </label>
+
+                <p>
+                    <!-- (36-43)- Mostra qual a qualiadde do serviço -->
+                    <select name="serviceBill" id="serviceBill" class="inputSelect" required>
+                        <option disabled selected value="0">-- Escolha Sua Opçao --</option>
+                        <option value="0.3">30% - Incrivel</option>
+                        <option value="0.2">20% - Bom</option>
+                        <option value="0.15">15% - Aceitavel</option>
+                        <option value="0.1">10% - Ruim</option>
+                        <option value="0.05">05% - Pessimo</option>
+                        
+                    </select>
+                </p>
+
+                <label for="people">
+                    <p>
+                        Quantas pessoa vão dividir a conta?
+                    </p>
+                </label>
+                <p>
+                    <!-- (55)- Recebe o numero de pessoas q comeram -->
+                    <input type="number" placeholder="1" name="people" id="people" class="inputForm" required> pessoas.
+                </p>
+                <button type="submit" class="formSubmit">Calcular</button>
+            </form>
+        </div>
+
+        <div id="totalTip">
+            Gorjetas Totais: R$
+            <span id="tip">0.00</span>
+            <p id="each">
+                cada
+            </p>
+        </div>
+    </div>
+    <script type="text/javaScript" src="script.js"></script>
+</body>
+
+</html>
