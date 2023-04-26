@@ -1,0 +1,28 @@
+.keys {
+    background-color: #283e59;
+    color: white;
+    padding: 20px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keys:hover {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+#AC{
+    color: #ebff33
+}
+
+#DE{
+    color: #ff6d33;
+}

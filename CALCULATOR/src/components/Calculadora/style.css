@@ -1,0 +1,8 @@
+.container-calculator {
+    width: 355px;
+    height: 625px;
+    margin: auto;
+    border-radius: 20px;
+    background-color: var(--blue1);
+    padding: 20px 10px;
+}
