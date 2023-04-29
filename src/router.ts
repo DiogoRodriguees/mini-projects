@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { EntradaController } from "./modules/Entrada/EntradaController";
-import { SaidaController } from "./modules/Saida/SaidaController";
-import { HistoricoController } from "./modules/HistoricoDeOperacoes/HistoricoController";
+import { EntradaController } from "./modules/controllers/EntradaController";
+import { SaidaController } from "./modules/controllers/SaidaController";
+import { HistoricoController } from "./modules/controllers/HistoricoController";
 
 const entrada = new EntradaController();
 const saida = new SaidaController();
