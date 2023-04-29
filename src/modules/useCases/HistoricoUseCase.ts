@@ -8,14 +8,21 @@ export interface historico {
 }
 
 export class HistoricoUseCase {
-    async buscarHistorico() {
-        const saidas = await prisma.saida.findMany();
-        const entradas = await prisma.entrada.findMany();
+    async buscar(descricao) {
+        const saidas = await prisma.saida.findMany({
+            where: {
+                descricao: { contains: descricao },
+            },
+        });
+        const entradas = await prisma.entrada.findMany({
+            where: {
+                descricao: { contains: descricao },
+            },
+        });
+        
+        const historico = saidas.concat(entradas)
 
-        const entradasMaisSaidas = saidas.concat(entradas);
-
-        // ordenando entradas e saídas - a ultima entrada ou saída dica no começo do array
-        const entradasMaisSaidasOrdenadas = entradasMaisSaidas.sort((a, b) => {
+        const historicoOrdenado = historico.sort((a, b)=>{
             if (a.create_at > b.create_at) {
                 return -1;
             }
@@ -23,8 +30,9 @@ export class HistoricoUseCase {
                 return 1;
             }
             return -1;
-        });
+        }
+        )
 
-        return entradasMaisSaidasOrdenadas;
+        return historicoOrdenado;
     }
 }

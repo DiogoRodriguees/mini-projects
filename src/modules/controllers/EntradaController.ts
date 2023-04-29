@@ -6,7 +6,6 @@ export class EntradaController {
         const { valor, descricao, tipo } = req.body;
 
         const entradaUseCase = new EntradaUseCase();
-        
 
         const entrada = await entradaUseCase.criarEntrada({
             valor,
