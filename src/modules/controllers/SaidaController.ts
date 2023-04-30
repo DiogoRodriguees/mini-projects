@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { SaidaUseCase } from "../useCases/SaidaUseCase";
+import { SaidaUseCase } from "../repositories/SaidaUseCase";
 
 export class SaidaController {
     async novaSaida(req: Request, res: Response) {

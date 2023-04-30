@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { EntradaUseCase } from "../useCases/EntradaUseCase";
+import { EntradaUseCase } from "../repositories/EntradaUseCase";
 
 export class EntradaController {
     async novaEntrada(req: Request, res: Response) {

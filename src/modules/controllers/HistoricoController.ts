@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { HistoricoUseCase } from "../useCases/HistoricoUseCase";
+import { HistoricoUseCase } from "../repositories/HistoricoUseCase";
 
 export class HistoricoController {
  
