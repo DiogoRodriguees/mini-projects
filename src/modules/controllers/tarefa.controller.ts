@@ -34,11 +34,17 @@ export class TarefaController {
 
     /* Buscar tarefas não concluidas */
     async buscarTarefasNaoConcluidas(req: Request, res: Response) {
-        const naoConcluidas = await 
-        
-        return res.json(naoConcluidas)
+        const tarefas = new Tarefa();
+        const naoConcluidas = await tarefas.buscarTarefasNaoConcluidas();
+
+        return res.json(naoConcluidas);
     }
 
     /* Buscar tarefas concluidas */
-    async buscarTarefasConcluidas(req: Request, res: Response) {}
+    async buscarTarefasConcluidas(req: Request, res: Response) {
+        const tarefas = new Tarefa();
+        const concluidas = await tarefas.buscarTarefasConcluidas();
+
+        return res.json(concluidas);
+    }
 }
