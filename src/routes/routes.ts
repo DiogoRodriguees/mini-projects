@@ -11,14 +11,13 @@ const routes = Router();
 
 // entradas
 routes.post("/entrada", entrada.novaEntrada);
-routes.get("/entradas", entrada.buscarTodasEntradas);
+routes.get("/buscarEntradas", entrada.buscarTodasEntradas);
 
 // saidas
 routes.post("/saida", saida.novaSaida);
-routes.get("/saidas", saida.buscarTodasSaidas);
+routes.get("/buscarSaidas", saida.buscarTodasSaidas);
 
 // historico
-// routes.get("/historico", historico.buscarHistorico);
 routes.get("/historico", historico.buscar);
 
 export { routes };
