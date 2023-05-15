@@ -1,13 +1,23 @@
-## Comando para iniciar o projeto
+# Projeto Finance System - Backend
 
-Para iniciar o projeto com o arquivo packge.json:
-`yarn init -y`
+Esse projeto foi criado com intuito de simular um programa de fluxo de caixa (entradas e saidas). As atualizações do projetos serão adicionas mas, as versões anteriores serão mantidas para visualização do desenvolvimento do projeto.
 
-Para instalar o prisma como dependencia de desenvolvimento:
-`yarn add prisma -D`
+## Rotas de acesso
 
-Para adicionar o typescript ao projeto:
-`yarn add ts-node-dev typescript @types/express`
+-   **post("/saida")** - usada para criar uma nova saida.
+-   **post("/entrada")** - usada para criar uma nova entrada.
+-   **get("/buscarSaidas")** - rota para buscar todas as saidas.
+-   **get("/buscarEntradas")** - rota para buscar todas as entradas.
+-   **get("/historico")** - rota pra buscar todas as entradas e saidas.
 
-Para instalar o prisma client:
-` yarn add @prisma/client express`
+## Tecnologias utilizadas
+
+-   NodeJS
+-   Typescript
+-   Prisma
+-   SQlite
+
+## Como rodar projeto
+
+    ~$ yarn
+    ~$ yarn run dev
