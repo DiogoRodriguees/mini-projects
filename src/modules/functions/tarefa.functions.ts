@@ -61,4 +61,11 @@ export class Tarefa {
 
         return naoConcluidas;
     }
+
+    /* Busca todas as tarefas */
+    async buscarTarefas() {
+        const todas = await prismaclient.tarefas.findMany();
+
+        return todas;
+    }
 }

@@ -9,5 +9,6 @@ routes.post("/concluirTarefa/:id", tarefas.marcarComoConcluida);
 routes.post("/naoConcluirTarefa/:id", tarefas.marcarComoNaoConcluida);
 routes.get("/buscarTarefas/concluidas", tarefas.buscarTarefasConcluidas);
 routes.get("/buscarTarefas/naoConcluidas", tarefas.buscarTarefasNaoConcluidas);
+routes.get("/buscarTarefas", tarefas.buscarTarefas)
 
 export { routes };

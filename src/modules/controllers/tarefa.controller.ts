@@ -47,4 +47,12 @@ export class TarefaController {
 
         return res.json(concluidas);
     }
+
+    /* Busca todas as tarefas */
+    async buscarTarefas(req: Request, res: Response) {
+        const tarefas = new Tarefa();
+        const todas = await tarefas.buscarTarefas();
+
+        return res.json(todas);
+    }
 }
