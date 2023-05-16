@@ -11,6 +11,17 @@ export class Tarefa {
 
         return tarefa;
     }
+    
+    /* Excluir a tarefa com determinado ID */
+    async excluir(id: number) {
+        const excluido = await prismaclient.tarefas.delete({
+            where: {
+                id: id,
+            },
+        });
+
+        return excluido;
+    }
 
     /* Busca a tarefa e marca como concluida */
     async marcarComoConcluida(id: number) {

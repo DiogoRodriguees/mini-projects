@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
 import { Tarefa } from "../functions/tarefa.functions";
-import { LargeNumberLike } from "crypto";
-import { ADDRGETNETWORKPARAMS } from "dns";
 
 export class TarefaController {
     /* Cria uma nova tarefa e inseri ela no banco de dados */
@@ -12,6 +10,16 @@ export class TarefaController {
         const tarefa = await inserirTarefa.inserirNovaTarefa(descricao);
 
         return res.json(tarefa);
+    }
+
+    /* Excluir a tarefa com base no ID */
+    async excluir(req: Request, res: Response) {
+        const { id } = req.query;
+
+        const inserirTarefa = new Tarefa();
+        const excluida = await inserirTarefa.excluir(Number(id));
+
+        return res.json(excluida);
     }
 
     /* Marca uma tarefa como concluida */
