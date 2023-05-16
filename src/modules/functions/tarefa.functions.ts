@@ -2,7 +2,7 @@ import { prismaclient } from "../../prismaClient/prismaclient";
 
 export class Tarefa {
     /* Cria uma nova tarefa no banco com a descrição recebida */
-    async inserirNovaTarefa(descricao: string) {
+    async criar(descricao: string) {
         const tarefa = await prismaclient.tarefas.create({
             data: {
                 descricao,
@@ -11,7 +11,7 @@ export class Tarefa {
 
         return tarefa;
     }
-    
+
     /* Excluir a tarefa com determinado ID */
     async excluir(id: number) {
         const excluido = await prismaclient.tarefas.delete({
@@ -38,7 +38,7 @@ export class Tarefa {
     }
 
     /* Busca a tarefa e desmarca como concluida */
-    async marcarComoNaoConcluida(id: number) {
+    async desmarcarComoConcluida(id: number) {
         const tarefa = await prismaclient.tarefas.update({
             where: {
                 id: id,
@@ -52,7 +52,7 @@ export class Tarefa {
     }
 
     /* Busca tarefas concluidas */
-    async buscarTarefasConcluidas() {
+    async buscarConcluidas() {
         const concluidas = await prismaclient.tarefas.findMany({
             where: {
                 completa: true,
@@ -63,7 +63,7 @@ export class Tarefa {
     }
 
     /* Busca tarefas não concluidas */
-    async buscarTarefasNaoConcluidas() {
+    async buscarNaoConcluidas() {
         const naoConcluidas = await prismaclient.tarefas.findMany({
             where: {
                 completa: false,
@@ -74,7 +74,7 @@ export class Tarefa {
     }
 
     /* Busca todas as tarefas */
-    async buscarTarefas() {
+    async buscarTodas() {
         const todas = await prismaclient.tarefas.findMany();
 
         return todas;

@@ -7,7 +7,7 @@ export class TarefaController {
         const { descricao } = req.body;
 
         const inserirTarefa = new Tarefa();
-        const tarefa = await inserirTarefa.inserirNovaTarefa(descricao);
+        const tarefa = await inserirTarefa.criar(descricao);
 
         return res.json(tarefa);
     }
@@ -32,34 +32,34 @@ export class TarefaController {
     }
 
     /* Marca a tarefa como não concluida */
-    async marcarComoNaoConcluida(req: Request<number>, res: Response) {
+    async desmarcarComoConcluida(req: Request<number>, res: Response) {
         const { id } = req.query;
         const inserirTarefa = new Tarefa();
-        const tarefa = await inserirTarefa.marcarComoNaoConcluida(Number(id));
+        const tarefa = await inserirTarefa.desmarcarComoConcluida(Number(id));
 
         return res.json(tarefa);
     }
 
     /* Buscar tarefas não concluidas */
-    async buscarTarefasNaoConcluidas(req: Request, res: Response) {
+    async buscarNaoConcluidas(req: Request, res: Response) {
         const tarefas = new Tarefa();
-        const naoConcluidas = await tarefas.buscarTarefasNaoConcluidas();
+        const naoConcluidas = await tarefas.buscarNaoConcluidas();
 
         return res.json(naoConcluidas);
     }
 
     /* Buscar tarefas concluidas */
-    async buscarTarefasConcluidas(req: Request, res: Response) {
+    async buscarConcluidas(req: Request, res: Response) {
         const tarefas = new Tarefa();
-        const concluidas = await tarefas.buscarTarefasConcluidas();
+        const concluidas = await tarefas.buscarConcluidas();
 
         return res.json(concluidas);
     }
 
     /* Busca todas as tarefas */
-    async buscarTarefas(req: Request, res: Response) {
+    async buscarTodas(req: Request, res: Response) {
         const tarefas = new Tarefa();
-        const todas = await tarefas.buscarTarefas();
+        const todas = await tarefas.buscarTodas();
 
         return res.json(todas);
     }
