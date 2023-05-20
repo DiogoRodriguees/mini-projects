@@ -17,6 +17,23 @@ export class CarsRepository {
         return car;
     }
 
+    /* Para editar os campos do car */
+    async updateCar(id: number, { veiculo, marca, ano, desc, vendido }: Car) {
+        const car = await prisma.car.update({
+            where: {
+                id: id,
+            },
+            data: {
+                veiculo: veiculo,
+                marca: marca,
+                ano: ano,
+                desc: desc,
+                vendido: vendido,
+            },
+        });
+        return car;
+    }
+
     /* Busca todos os carros cadastrados */
     async getAll() {
         const cars = await prisma.car.findMany();
@@ -28,13 +45,21 @@ export class CarsRepository {
     async getByParam(q: string) {
         const cars = await prisma.car.findMany({
             where: {
-                OR: [
-                    { veiculo: { contains: q } },
-                    { marca: { contains: q } },
-                ],
+                OR: [{ veiculo: { contains: q } }, { marca: { contains: q } }],
             },
         });
 
         return cars;
+    }
+
+    /* Busca cars que corresponde ao ID */
+    async getById(id: number) {
+        const car = await prisma.car.findMany({
+            where: {
+                id: id,
+            },
+        });
+
+        return car;
     }
 }
