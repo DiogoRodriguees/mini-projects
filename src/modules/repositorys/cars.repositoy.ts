@@ -19,19 +19,23 @@ export class CarsRepository {
 
     /* Para editar os campos do car */
     async updateCar(id: number, { veiculo, marca, ano, desc, vendido }: Car) {
-        const car = await prisma.car.update({
-            where: {
-                id: id,
-            },
-            data: {
-                veiculo: veiculo,
-                marca: marca,
-                ano: ano,
-                desc: desc,
-                vendido: vendido,
-            },
-        });
-        return car;
+        const carExists = await prisma.car.findUnique({ where: { id } });
+
+        if (carExists) {
+            const car = await prisma.car.update({
+                where: {
+                    id,
+                },
+                data: {
+                    veiculo,
+                    marca,
+                    ano,
+                    desc,
+                    vendido,
+                },
+            });
+            return car;
+        }
     }
 
     /* Busca todos os carros cadastrados */
