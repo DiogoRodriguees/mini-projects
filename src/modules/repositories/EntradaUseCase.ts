@@ -1,4 +1,4 @@
-import { prisma } from "../../prismaClient/client";
+import { prisma } from "../../services/client";
 import { EntradaDTO } from "../types/EntradaDTO";
 
 export class EntradaUseCase {
