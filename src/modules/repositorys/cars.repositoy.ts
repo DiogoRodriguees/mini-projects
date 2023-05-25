@@ -46,10 +46,10 @@ export class CarsRepository {
     }
 
     /* Busca os carros que correpondem ao parametro */
-    async getByParam(q: string) {
+    async getByParam(params: string) {
         const cars = await prisma.car.findMany({
             where: {
-                OR: [{ veiculo: { contains: q } }, { marca: { contains: q } }],
+                OR: [{ veiculo: { contains: params } }, { marca: { contains: params } }],
             },
         });
 
