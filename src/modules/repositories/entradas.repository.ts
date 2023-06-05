@@ -1,5 +1,5 @@
-import { prisma } from "../../services/client";
 import { EntradaDTO } from "../types/EntradaDTO";
+import { prisma } from "../../services/client";
 
 export class EntradaUseCase {
     async criarEntrada({ valor, descricao, tipo }: EntradaDTO) {

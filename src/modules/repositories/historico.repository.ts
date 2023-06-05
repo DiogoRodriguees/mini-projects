@@ -1,4 +1,4 @@
-import { prisma } from "../../prismaClient/client";
+import { prisma } from "../../services/client";
 
 export interface historico {
     descricao: string;
@@ -19,10 +19,10 @@ export class HistoricoUseCase {
                 descricao: { contains: descricao },
             },
         });
-        
-        const historico = saidas.concat(entradas)
 
-        const historicoOrdenado = historico.sort((a, b)=>{
+        const historico = saidas.concat(entradas);
+
+        const historicoOrdenado = historico.sort((a, b) => {
             if (a.create_at > b.create_at) {
                 return -1;
             }
@@ -30,8 +30,7 @@ export class HistoricoUseCase {
                 return 1;
             }
             return -1;
-        }
-        )
+        });
 
         return historicoOrdenado;
     }
