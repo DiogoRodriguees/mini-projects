@@ -19,5 +19,10 @@ Esse projeto foi criado com intuito de simular um programa de fluxo de caixa (en
 
 ## Como rodar projeto
 
-    ~$ yarn
-    ~$ yarn run dev
+    # utilizando npm
+    $ npm
+    $ npm run dev
+
+    # utilizando yarn
+    $ yarn
+    $ yarn run dev
