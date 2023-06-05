@@ -1,26 +1,34 @@
 import { Request, Response } from "express";
-import { EntradaUseCase } from "../repositories/EntradaUseCase";
+import { EntradaUseCase } from "../repositories/entradas.repository";
 
 export class EntradaController {
     async novaEntrada(req: Request, res: Response) {
-        const { valor, descricao, tipo } = req.body;
+        try {
+            const { valor, descricao, tipo } = req.body;
 
-        const entradaUseCase = new EntradaUseCase();
+            const entradaUseCase = new EntradaUseCase();
 
-        const entrada = await entradaUseCase.criarEntrada({
-            valor,
-            descricao,
-            tipo,
-        });
+            const entrada = await entradaUseCase.criarEntrada({
+                valor,
+                descricao,
+                tipo,
+            });
 
-        return res.json(entrada);
+            res.status(200).send(entrada);
+        } catch (error) {
+            res.status(400).send(error);
+        }
     }
 
     async buscarTodasEntradas(req: Request, res: Response) {
-        const entradaUseCase = new EntradaUseCase();
+        try {
+            const entradaUseCase = new EntradaUseCase();
 
-        const entradas = await entradaUseCase.buscarTodasEntradas();
+            const entradas = await entradaUseCase.buscarTodasEntradas();
 
-        return res.json(entradas);
+            res.json(entradas);
+        } catch (error) {
+            res.status(400).send(error);
+        }
     }
 }
