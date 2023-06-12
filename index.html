@@ -9,17 +9,24 @@
     <body>
         <div class="container">
             <header>
-                <button href="">Timer</button>
-                <button href="">Cronômetro</button>
+                <button id="timer">Timer</button>
+                <button id="cronometro">Cronômetro</button>
             </header>
 
-            <div class="display">22:22:22</div>
+            <div class="display">
+                <span id="horas">00</span>:<span id="minutes">00</span>:<span
+                    id="seconds"
+                    >00</span
+                >:<span id="milliseconds">00</span>
+            </div>
 
             <footer>
-                <button href="">Iniciar</button>
-                <button href="">Parar</button>
-                <button href="">Resetar</button>
+                <button id="iniciar">Iniciar</button>
+                <button id="parar">Parar</button>
+                <button id="resetar">Resetar</button>
             </footer>
         </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
