@@ -34,6 +34,7 @@ function startCronometro() {
 }
 function startTimer() {
     timerAtivo = true;
+    clearInterval(interval);
     interval = setInterval(updateTimer, 10); // Atualiza o cronômetro a cada 10 milissegundos
 }
 

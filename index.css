@@ -43,13 +43,20 @@ footer {
     font-family: sans-serif;
 }
 
-.btn-iniciar-cancelar{
+.display span {
+    width: 140px;
+    text-align: center;
+}
+
+.btn-iniciar-cancelar {
     display: flex;
     gap: 20px;
 }
+
 #cancelar {
     background-color: red;
 }
+
 button {
     height: 50px;
     width: 150px;
