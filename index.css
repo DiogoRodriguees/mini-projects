@@ -62,19 +62,22 @@ button {
     cursor: pointer;
 }
 
+#timerBtn {
+    background-color: rgb(255, 255, 39);
+}
+
 .modal-container {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.753);
     position: fixed;
 
-    display: flex;
-    flex-direction: row;
+    display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     font-family: sans-serif;
-    
 }
 
 .modal-container label {
@@ -96,16 +99,16 @@ button {
     text-align: center;
 }
 
-.modal-components{
+.modal-components {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: column;
+    gap: 40px;
     width: 30%;
     height: 30%;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
-    
+
     background-color: rgb(15, 15, 15);
 }
 .campos {
@@ -114,4 +117,8 @@ button {
     align-items: center;
     justify-content: center;
     width: 80px;
+}
+
+.tempo {
+    display: flex;
 }
