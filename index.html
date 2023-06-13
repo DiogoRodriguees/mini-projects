@@ -7,8 +7,21 @@
         <link rel="stylesheet" href="index.css" />
     </head>
     <body>
-        <div class="modal">
-            <input type="text">asasd<input type="text"><input type="text">
+        <div class="modal-container">
+            <div class="modal-components">
+                <div class="campos">
+                    <label for="horas">Hora</label>
+                    <input name="horas" type="number" max="24" />
+                </div>
+                <div class="campos">
+                    <label for="minutos">Min</label>
+                    <input name="minutos" type="number" max="60" />
+                </div>
+                <div class="campos">
+                    <label for="segundos">Seg</label>
+                    <input name="segundos" type="number" max="60" />
+                </div>
+            </div>
         </div>
         <div class="container">
             <header>
