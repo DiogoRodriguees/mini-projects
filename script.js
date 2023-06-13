@@ -15,7 +15,7 @@ var totalMilliseconds = 0;
 var interval;
 var timerAtivo = false;
 var cronometroAtivo = false;
-var cancelar = document.getElementById("cancelar")
+var cancelar = document.getElementById("cancelar");
 
 function iniciarCronometro() {
     // reseta
@@ -29,8 +29,8 @@ function iniciarCronometro() {
     if (opcaoAtiva === "timer") startTimer();
 }
 function startCronometro() {
-    if (!cronometroAtivo) interval = setInterval(updateCronometro, 10); // Atualiza o cronômetro a cada 10 milissegundos
-    cronometroAtivo = true;
+    clearInterval(interval);
+    interval = setInterval(updateCronometro, 10); // Atualiza o cronômetro a cada 10 milissegundos
 }
 function startTimer() {
     timerAtivo = true;
@@ -182,4 +182,7 @@ cronometro.addEventListener("click", changeToCronometro);
 iniciar.addEventListener("click", iniciarCronometro);
 parar.addEventListener("click", stopTimer);
 resetar.addEventListener("click", resetTimer);
-cancelar.addEventListener("click", () => document.getElementById("modal").style.display = "none")
+cancelar.addEventListener(
+    "click",
+    () => (document.getElementById("modal").style.display = "none")
+);
