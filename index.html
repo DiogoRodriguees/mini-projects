@@ -7,8 +7,48 @@
         <link rel="stylesheet" href="index.css" />
     </head>
     <body>
-        <div class="modal">
-            <input type="text">asasd<input type="text"><input type="text">
+        <div class="modal-container" id="modal">
+            <div class="modal-components">
+                <div class="tempo">
+                    <div class="campos">
+                        <label for="horas">Hora</label>
+                        <input
+                            name="horas"
+                            type="number"
+                            max="24"
+                            id="horaInput"
+                            min="0"
+                            value="0"
+                        />
+                    </div>
+                    <div class="campos">
+                        <label for="minutos">Min</label>
+                        <input
+                            name="minutos"
+                            type="number"
+                            max="60"
+                            id="minInput"
+                            min="0"
+                            value="0"
+                        />
+                    </div>
+                    <div class="campos">
+                        <label for="segundos">Seg</label>
+                        <input
+                            name="segundos"
+                            type="number"
+                            max="60"
+                            id="segInput"
+                            min="0"
+                            value="0"
+                        />
+                    </div>
+                </div>
+                <div class="btn-iniciar-cancelar">
+                    <button id="iniciartTimer">Iniciar</button>
+                    <button id="cancelar">Cancelar</button>
+                </div>
+            </div>
         </div>
         <div class="container">
             <header>
@@ -16,7 +56,7 @@
                 <button id="cronometro">Cronômetro</button>
             </header>
 
-            <div class="display">
+            <div class="display" id="display">
                 <span id="horas">00</span>:<span id="minutes">00</span>:<span
                     id="seconds"
                     >00</span
