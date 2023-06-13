@@ -58,3 +58,11 @@ button {
     background-color: #1e57d4;
     cursor: pointer;
 }
+
+.modal {
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #1e57d4;
+}
