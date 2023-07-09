@@ -1,30 +1,38 @@
-# Projeto Finance System - Backend
+![Finance System](./img/FINANCE%20SYSTEM.png)
 
-Esse projeto foi criado com intuito de simular um programa de fluxo de caixa (entradas e saidas). As atualizações do projetos serão adicionas mas, as versões anteriores serão mantidas para visualização do desenvolvimento do projeto.
+## Visão Geral
+
+Esse projeto foi criado na ideia de um programa de fluxo de caixa (entradas e saidas). Para o banco de dados, foi utilizado o SQLite, criando um arquivo local com os dados criados durante a execução.
 
 ## Rotas de acesso
 
 -   **post("/saida")** - usada para criar uma nova saida.
 -   **post("/entrada")** - usada para criar uma nova entrada.
--   **get("/buscarSaidas")** - rota para buscar todas as saidas.
--   **get("/buscarEntradas")** - rota para buscar todas as entradas.
--   **get("/historico")** - rota pra buscar todas as entradas e saidas.
+-   **get("/buscarSaidas")** - buscar todas as saidas.
+-   **get("/buscarEntradas")** - buscar todas as entradas.
+-   **get("/historico")** - buscar todas as entradas e saidas.
 
-## Tecnologias utilizadas
+## Tecnologias
 
--   NodeJS
--   Typescript
--   Prisma
--   SQlite
+-   [NodeJS](https://nodejs.org/en/docs)
+-   [Typescript](https://www.typescriptlang.org/docs/)
+-   [Prisma](https://www.prisma.io/docs/getting-started)
+-   [SQlite](https://www.sqlite.org/docs.html)
 
-## Como rodar projeto
+## Como Executar o Projeto
 
 ```bash
-# utilizando npm
-$ npm
-$ npm run dev
+    # clonando projeto
+    $ git clone https://github.com/DiogoRodriguees/BACKEND_FINANCE_SYSTEM.git
 
-# utilizando yarn
-$ yarn
-$ yarn run dev
+    # entrando na pasta do projeto
+    $ cd BACKEND_FINANCE_SYSTEM
+
+    # executando via npm
+    $ npm
+    $ npm run dev
+
+    # executando via yarn
+    $ yarn
+    $ yarn run dev
 ```
