@@ -28,5 +28,5 @@ Este projeto foi proposto pela equipe da diretoria da Haken (Empresa Júnior de 
     $ npm run dev
 ```
 ## Autores
-| [<img src="https://avatars.githubusercontent.com/diogorodriguees" width=115><br><sub>Diogo Rodrigues</sub>](https://github.com/diogorodriguees) |  [<img src="https://avatars.githubusercontent.com/GabrielMenPassos" width=115><br><sub>Marcos Vinicius de Quadros</sub>](https://github.com/GabrielMenPassos) | 
+| [<img src="https://avatars.githubusercontent.com/diogorodriguees" width=115><br><sub>Diogo Rodrigues</sub>](https://github.com/diogorodriguees) |  [<img src="https://avatars.githubusercontent.com/GabrielMenPassos" width=115><br><sub>Gabriel Passos</sub>](https://github.com/GabrielMenPassos) | 
 | :---: | :---: | 
