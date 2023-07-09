@@ -1,11 +1,32 @@
-# Backend Projeto AUTO HK
-Esse projeto foi realizado como treino dos treinees que entraram na Haken em 12/2022.
+![Capa do Projeto](./img/AUTO_HK.png)
+
+## Visão Geral
+
+Este projeto foi proposto pela equipe da diretoria da Haken (Empresa Júnior de Ciência da Computação). Seu objetivo é criar um programa que fize-se o controle de entrada e saída de veiculos. O projeto foi desenvolvido em duplas entre os trainees ingressantes em 12/2022.
 
 ## Tecnologias utilizadas
-* Typescript
-* NodeJS
-* Prisma
 
-## Como executar 
-    ~$ yarn
-    ~$ yarn run dev
+-   [NodeJS](https://nodejs.org/en/docs)
+-   [Typescript](https://www.typescriptlang.org/docs/)
+-   [Prisma](https://www.prisma.io/docs/getting-started)
+
+## Como Executar
+
+```bash
+    # clonando repositório
+    $ git clone https://github.com/DiogoRodriguees/BACKEND_AUTO_HK.git
+
+    # entrando na pasta do projeto
+    $ cd AUTO_HK
+
+    # executando via yarn
+    $ yarn
+    $ yarn run dev
+
+    # executando via npm
+    $ npm i
+    $ npm run dev
+```
+## Autores
+| [<img src="https://avatars.githubusercontent.com/diogorodriguees" width=115><br><sub>Diogo Rodrigues</sub>](https://github.com/diogorodriguees) |  [<img src="https://avatars.githubusercontent.com/GabrielMenPassos" width=115><br><sub>Marcos Vinicius de Quadros</sub>](https://github.com/GabrielMenPassos) | 
+| :---: | :---: | 
