@@ -1,10 +1,11 @@
+import { Layout } from "antd";
 import { Home } from "./screens/home";
 
 function App() {
     return (
-        <div>
+        <Layout className="bg-white h-screen">
             <Home />
-        </div>
+        </Layout>
     );
 }
 
