@@ -1,13 +1,7 @@
 import { Button, Card, Flex, Progress, Typography } from "antd";
-import React from "react";
+import { CardComponentProps } from "../../../helpers/types";
 
-type CardComponentProps = {
-    showCardDetails: () => void;
-};
-
-export const CardVehicle: React.FC<CardComponentProps> = ({
-    showCardDetails,
-}: CardComponentProps) => {
+export function CardVehicle({ showCardDetails }: CardComponentProps) {
     const defineColor = (percent: number) => {
         if (percent < 25) return "red";
         if (percent < 50) return "orange";
@@ -56,4 +50,4 @@ export const CardVehicle: React.FC<CardComponentProps> = ({
             </Flex>
         </Card>
     );
-};
+}

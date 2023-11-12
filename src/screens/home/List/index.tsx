@@ -1,19 +1,10 @@
 import { Button, Checkbox, Flex, Form, Input, Modal, Row } from "antd";
-import { ReactElement, useState } from "react";
+import { useState } from "react";
 import { CardList } from "../../../components/CardList";
 import { SearchGeneric } from "../../../components/Search";
+import { FieldType, ListCardProps } from "../../../helpers/types";
 
-type FieldType = {
-    model?: string;
-    year?: number;
-    brand?: string;
-};
-
-type ListCardProps = {
-    list: ReactElement[];
-};
-
-export const List: React.FC<ListCardProps> = ({ list }: ListCardProps) => {
+export const List: React.FC<ListCardProps> = ({ list }) => {
     const [activeModal, setActiveModal] = useState(false);
 
     const handleSubmit = (values: FieldType) => {

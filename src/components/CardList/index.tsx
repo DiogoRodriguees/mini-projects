@@ -1,11 +1,5 @@
-import { ReactElement } from "react";
+import { CardListProps } from "../../helpers/types";
 
-type CardListProps = {
-    children: ReactElement[];
-};
-
-export const CardList: React.FC<CardListProps> = ({
-    children,
-}: CardListProps) => {
+export const CardList: React.FC<CardListProps> = ({ children }) => {
     return <div className="h-5/6 overflow-y:scroll ">{children}</div>;
 };
