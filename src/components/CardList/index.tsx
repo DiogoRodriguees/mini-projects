@@ -7,5 +7,5 @@ type CardListProps = {
 export const CardList: React.FC<CardListProps> = ({
     children,
 }: CardListProps) => {
-    return <div className="h-5/6 overflow:scroll ">{children}</div>;
+    return <div className="h-5/6 overflow-y:scroll ">{children}</div>;
 };

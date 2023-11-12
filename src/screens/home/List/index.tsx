@@ -78,7 +78,7 @@ export const List: React.FC<ListCardProps> = ({ list }: ListCardProps) => {
             </Flex>
             <CardList children={list} />
             <Button
-                className="h-10 w-10 rounded-full text-center text-3xl flex justify-center items-center bg-blue-500"
+                className="h-12 w-12 rounded-full text-3xl flex justify-center items-center bg-blue-500"
                 type="primary"
                 onClick={() => setActiveModal(!activeModal)}
             >
