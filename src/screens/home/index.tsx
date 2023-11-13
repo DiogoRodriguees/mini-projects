@@ -66,7 +66,7 @@ export const Home: React.FC = () => {
     return (
         <>
             <Header />
-            <div className="min-h-[calc(100vh-64px)] w-screen px-20">
+            <Col className="min-h-[calc(100vh-64px)] w-screen px-20">
                 <Flex className="w-full h-full bg-white">
                     <Col className="w-1/2 py-8 px-6 h-full">
                         <ListVehicle list={cardListExample} />
@@ -81,7 +81,7 @@ export const Home: React.FC = () => {
                         )}
                     </Col>
                 </Flex>
-            </div>
+            </Col>
         </>
     );
 };

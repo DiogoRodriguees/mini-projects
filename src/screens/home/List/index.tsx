@@ -1,4 +1,5 @@
 import { Button, Flex, Modal } from "antd";
+import { useForm } from "antd/es/form/Form";
 import { useState } from "react";
 import { CardList } from "../../../components/CardList";
 import { SearchGeneric } from "../../../components/Search";
@@ -7,9 +8,12 @@ import { FormAddCar } from "../components/Form";
 
 export const ListVehicle: React.FC<ListCardProps> = ({ list }) => {
     const [activeModal, setActiveModal] = useState(false);
+    const [form] = useForm();
 
     const handleSubmit = (values: FieldType) => {
         console.log(values);
+        form.resetFields();
+        setActiveModal(false);
     };
 
     return (
@@ -24,6 +28,7 @@ export const ListVehicle: React.FC<ListCardProps> = ({ list }) => {
                     footer={[]}
                 >
                     <FormAddCar
+                        form={form}
                         handleSubmit={handleSubmit}
                         setActiveModal={setActiveModal}
                     />

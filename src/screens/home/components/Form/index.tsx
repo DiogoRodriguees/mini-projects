@@ -1,17 +1,24 @@
-import { Button, Checkbox, Form, Input, Row } from "antd";
+import { Button, Checkbox, Form, FormInstance, Input, Row } from "antd";
 import { FieldType } from "../../../../helpers/types";
 
 type FormAddCarProps = {
     handleSubmit: (values: FieldType) => void;
     setActiveModal: (status: boolean) => void;
+    form: FormInstance;
 };
 
 export const FormAddCar: React.FC<FormAddCarProps> = ({
     handleSubmit,
     setActiveModal,
+    form,
 }) => {
+    const closeModal = () => {
+        form.resetFields();
+        setActiveModal(false);
+    };
     return (
         <Form
+            form={form}
             name="basic"
             layout="vertical"
             onFinish={handleSubmit}
@@ -22,7 +29,15 @@ export const FormAddCar: React.FC<FormAddCarProps> = ({
                 sold: false,
             }}
         >
-            <Form.Item name="model" className="flex flex-col">
+            <Form.Item
+                name="model"
+                rules={[
+                    {
+                        required: true,
+                        message: "Por favor, insira o modelo do veiculo!",
+                    },
+                ]}
+            >
                 <Input
                     type="text"
                     className="h-10"
@@ -30,7 +45,15 @@ export const FormAddCar: React.FC<FormAddCarProps> = ({
                 />
             </Form.Item>
 
-            <Form.Item name="year">
+            <Form.Item
+                name="year"
+                rules={[
+                    {
+                        required: true,
+                        message: "Por favor, insira o ano do veiculo!",
+                    },
+                ]}
+            >
                 <Input
                     type="number"
                     className="h-10"
@@ -38,11 +61,19 @@ export const FormAddCar: React.FC<FormAddCarProps> = ({
                 />
             </Form.Item>
 
-            <Form.Item name="brand">
+            <Form.Item
+                name="brand"
+                rules={[
+                    {
+                        required: true,
+                        message: "Por favor, insira a fabricante do veiculo!",
+                    },
+                ]}
+            >
                 <Input
                     type="text"
                     className="h-10"
-                    placeholder="Digite a marca do vaiculo"
+                    placeholder="Digite a fabricante do vaiculo"
                 />
             </Form.Item>
 
@@ -51,7 +82,7 @@ export const FormAddCar: React.FC<FormAddCarProps> = ({
             </Form.Item>
 
             <Row className="flex justify-end gap-2" gutter={20}>
-                <Button key="back" onClick={() => setActiveModal(false)}>
+                <Button key="back" onClick={closeModal}>
                     Cancelar
                 </Button>
 
