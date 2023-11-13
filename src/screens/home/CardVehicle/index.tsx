@@ -1,32 +1,28 @@
 import { Button, Card, Flex, Progress, Typography } from "antd";
 import { CardComponentProps } from "../../../helpers/types";
 
-export function CardVehicle({ showCardDetails }: CardComponentProps) {
-    const defineColor = (percent: number) => {
-        if (percent < 25) return "red";
-        if (percent < 50) return "orange";
-        if (percent < 75) return "yellow";
-        return "green";
-    };
+const defineColor = (percent: number) => {
+    if (percent < 25) return "red";
+    if (percent < 50) return "orange";
+    if (percent < 75) return "yellow";
+    return "green";
+};
 
+export const CardVehicle: React.FC<CardComponentProps> = (props) => {
     return (
-        <Card className="bg-white h-48 w-9/10 my-5 px-4 rounded-md shadow-md ">
+        <Card className="bg-white h-48 w-9/10 px-4 rounded-md shadow-md ">
             <Flex vertical>
                 <Flex className="justify-between">
                     <Typography.Text className="font-bold text-lg">
-                        Marca
+                        {props.vehicle.brand} - {props.vehicle.name}
                     </Typography.Text>
                     <Typography.Text className="font-bold text-lg">
-                        2003
+                        {props.vehicle.year}
                     </Typography.Text>
                 </Flex>
                 <Flex>
                     <Typography.Text className="h-16  text-justify my-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quod quia voluptatem, enim eligendi officiis minus
-                        voluptas recusandae dolorum aspernatur iure quisquam
-                        delectus assumenda, optio officia, alias modi ex
-                        dignissimos saepe.
+                        {props.vehicle.description}
                     </Typography.Text>
                 </Flex>
 
@@ -35,13 +31,13 @@ export function CardVehicle({ showCardDetails }: CardComponentProps) {
                         <Typography.Text>Conservação</Typography.Text>
                         <Progress
                             className="w-2/5"
-                            percent={79}
+                            percent={props.vehicle.consevation}
                             strokeColor={defineColor(79)}
                         />
                     </Flex>
                     <Button
                         type="primary"
-                        onClick={() => showCardDetails()}
+                        onClick={() => props.showCardDetails(props.vehicle)}
                         className="bg-blue-500 justify-end h-10 text-base"
                     >
                         Ver Detalhes
@@ -50,4 +46,4 @@ export function CardVehicle({ showCardDetails }: CardComponentProps) {
             </Flex>
         </Card>
     );
-}
+};

@@ -14,6 +14,20 @@ export type ListCardProps = {
     list: ReactElement[];
 };
 
+export type VehicleProps = {
+    description: string;
+    name: string;
+    year: number;
+    brand: string;
+    consevation: number;
+};
+
+export type CardDetailProps = {
+    vehicle: VehicleProps;
+    closeCard: () => void;
+};
+
 export type CardComponentProps = {
-    showCardDetails: () => void;
+    vehicle: VehicleProps;
+    showCardDetails: (vehicle: VehicleProps) => void;
 };

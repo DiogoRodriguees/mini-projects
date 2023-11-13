@@ -12,8 +12,8 @@ export const List: React.FC<ListCardProps> = ({ list }) => {
     };
 
     return (
-        <>
-            <Flex className="justify-start gap-4">
+        <Flex vertical className="gap-6 h-full">
+            <Flex className="justify-start px-4">
                 <SearchGeneric />
 
                 <Modal
@@ -68,13 +68,17 @@ export const List: React.FC<ListCardProps> = ({ list }) => {
                 </Modal>
             </Flex>
             <CardList children={list} />
-            <Button
-                className="h-12 w-12 rounded-full text-3xl flex justify-center items-center bg-blue-500"
-                type="primary"
-                onClick={() => setActiveModal(!activeModal)}
-            >
-                +
-            </Button>
-        </>
+
+            <Flex className="justify-start ml-4 ">
+                <Button
+                    className="bg-blue-500 h-12 w-12 text-3xl"
+                    shape="circle"
+                    type="primary"
+                    onClick={() => setActiveModal(!activeModal)}
+                >
+                    +
+                </Button>
+            </Flex>
+        </Flex>
     );
 };
