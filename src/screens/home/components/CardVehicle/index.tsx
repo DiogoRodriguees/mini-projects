@@ -1,5 +1,5 @@
 import { Button, Card, Flex, Progress, Typography } from "antd";
-import { CardComponentProps } from "../../../helpers/types";
+import { CardComponentProps } from "../../../../helpers/types";
 
 const defineColor = (percent: number) => {
     if (percent < 25) return "red";

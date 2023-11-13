@@ -2,9 +2,9 @@ import { Col, Flex } from "antd";
 import { useState } from "react";
 import { Header } from "../../components/Header";
 import { VehicleProps } from "../../helpers/types";
-import { CardDetail } from "./CardDetail";
-import { CardVehicle } from "./CardVehicle";
 import { List } from "./List";
+import { CardDetail } from "./components/CardDetail";
+import { CardVehicle } from "./components/CardVehicle";
 
 const vehicleExample: VehicleProps = {
     description:
