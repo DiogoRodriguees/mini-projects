@@ -5,7 +5,7 @@ import { SearchGeneric } from "../../../components/Search";
 import { FieldType, ListCardProps } from "../../../helpers/types";
 import { FormAddCar } from "../components/Form";
 
-export const List: React.FC<ListCardProps> = ({ list }) => {
+export const ListVehicle: React.FC<ListCardProps> = ({ list }) => {
     const [activeModal, setActiveModal] = useState(false);
 
     const handleSubmit = (values: FieldType) => {

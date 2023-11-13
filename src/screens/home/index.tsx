@@ -1,10 +1,10 @@
 import { Col, Flex } from "antd";
 import { useState } from "react";
+import { CardDetail } from "../../components/CardDetail";
+import { CardVehicle } from "../../components/CardVehicle";
 import { Header } from "../../components/Header";
 import { VehicleProps } from "../../helpers/types";
-import { List } from "./List";
-import { CardDetail } from "./components/CardDetail";
-import { CardVehicle } from "./components/CardVehicle";
+import { ListVehicle } from "./List";
 
 const vehicleExample: VehicleProps = {
     description:
@@ -69,7 +69,7 @@ export const Home: React.FC = () => {
             <div className="min-h-[calc(100vh-64px)] w-screen px-20">
                 <Flex className="w-full h-full bg-white">
                     <Col className="w-1/2 py-8 px-6 h-full">
-                        <List list={cardListExample} />
+                        <ListVehicle list={cardListExample} />
                     </Col>
 
                     <Col className="w-1/2 h-full py-8 px-6">

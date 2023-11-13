@@ -1,5 +1,5 @@
 import { Button, Card, Col, Flex, Progress, Typography } from "antd";
-import { CardDetailProps } from "../../../../helpers/types";
+import { CardDetailProps } from "../../helpers/types";
 
 export const CardDetail: React.FC<CardDetailProps> = ({
     vehicle,
