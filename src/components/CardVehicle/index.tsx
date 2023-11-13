@@ -38,7 +38,7 @@ export const CardVehicle: React.FC<CardComponentProps> = (props) => {
                     <Button
                         type="primary"
                         onClick={() => props.showCardDetails(props.vehicle)}
-                        className="bg-blue-500 justify-end h-10 text-base"
+                        className="bg-blue-500 justify-end h-10 text-lg"
                     >
                         Ver Detalhes
                     </Button>

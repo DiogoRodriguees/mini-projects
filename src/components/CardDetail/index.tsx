@@ -39,7 +39,7 @@ export const CardDetail: React.FC<CardDetailProps> = ({
                 <Flex className="justify-end">
                     <Button
                         onClick={closeCard}
-                        className="h-12 w-32 my-4 bg-blue-500"
+                        className="h-10 text-lg w-32 my-4 bg-blue-500"
                         type="primary"
                     >
                         Fechar
