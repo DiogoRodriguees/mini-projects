@@ -1,10 +1,13 @@
 import { Flex } from "antd";
-import { CardListProps } from "../../helpers/types";
+import { CardProps, VehicleProps } from "../../helpers/types";
+import { CardVehicle } from "../CardVehicle";
 
-export const CardList: React.FC<CardListProps> = ({ children }) => {
+export const CardList: React.FC<CardProps> = ({ vehicles, showDetails }) => {
     return (
         <Flex vertical className="h-5/6 gap-6 px-4 overflow-y-scroll ">
-            {children}
+            {vehicles.map((vehicle: VehicleProps) => (
+                <CardVehicle vehicle={vehicle} showDetails={showDetails} />
+            ))}
         </Flex>
     );
 };

@@ -27,7 +27,7 @@ export const CardDetail: React.FC<CardDetailProps> = ({
                     <Typography.Text>Conservação</Typography.Text>
                     <Progress
                         className="w-2/5"
-                        percent={vehicle.consevation}
+                        percent={vehicle.conservation}
                         strokeColor={defineColor(79)}
                     />
                 </Flex>

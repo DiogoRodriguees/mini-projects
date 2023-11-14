@@ -8,21 +8,24 @@ const defineColor = (percent: number) => {
     return "green";
 };
 
-export const CardVehicle: React.FC<CardComponentProps> = (props) => {
+export const CardVehicle: React.FC<CardComponentProps> = ({
+    vehicle,
+    showDetails,
+}) => {
     return (
         <Card className="bg-white h-48 w-9/10 px-4 rounded-md shadow-md ">
             <Flex vertical>
                 <Flex className="justify-between">
                     <Typography.Text className="font-bold text-lg">
-                        {props.vehicle.brand} - {props.vehicle.name}
+                        {vehicle.brand} - {vehicle.model}
                     </Typography.Text>
                     <Typography.Text className="font-bold text-lg">
-                        {props.vehicle.year}
+                        {vehicle.year}
                     </Typography.Text>
                 </Flex>
                 <Flex>
                     <Typography.Text className="h-16  text-justify my-2">
-                        {props.vehicle.description}
+                        {vehicle.description}
                     </Typography.Text>
                 </Flex>
 
@@ -31,13 +34,13 @@ export const CardVehicle: React.FC<CardComponentProps> = (props) => {
                         <Typography.Text>Conservação</Typography.Text>
                         <Progress
                             className="w-2/5"
-                            percent={props.vehicle.consevation}
-                            strokeColor={defineColor(79)}
+                            percent={vehicle.conservation}
+                            strokeColor={defineColor(vehicle.conservation)}
                         />
                     </Flex>
                     <Button
                         type="primary"
-                        onClick={() => props.showCardDetails(props.vehicle)}
+                        onClick={() => showDetails(vehicle)}
                         className="bg-blue-500 justify-end h-10 text-lg"
                     >
                         Ver Detalhes

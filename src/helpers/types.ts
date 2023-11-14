@@ -5,21 +5,28 @@ export type CardListProps = {
 };
 
 export type FieldType = {
-    model?: string;
-    year?: number;
-    brand?: string;
+    model: string;
+    year: number;
+    brand: string;
+    sold: boolean;
+};
+
+export type CardProps = {
+    vehicles: VehicleProps[];
+    showDetails: (vehicleParam: VehicleProps) => void;
 };
 
 export type ListCardProps = {
-    list: ReactElement[];
+    showDetails: (vehicleParam: VehicleProps) => void;
 };
 
 export type VehicleProps = {
     description: string;
-    name: string;
+    model: string;
     year: number;
     brand: string;
-    consevation: number;
+    conservation: number;
+    sold: boolean;
 };
 
 export type CardDetailProps = {
@@ -29,5 +36,5 @@ export type CardDetailProps = {
 
 export type CardComponentProps = {
     vehicle: VehicleProps;
-    showCardDetails: (vehicle: VehicleProps) => void;
+    showDetails: (vehicle: VehicleProps) => void;
 };

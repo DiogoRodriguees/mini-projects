@@ -1,8 +1,8 @@
-import { Button, Checkbox, Form, FormInstance, Input, Row } from "antd";
-import { FieldType } from "../../../../helpers/types";
+import { Button, Checkbox, Form, FormInstance, Input, Row, Slider } from "antd";
+import { VehicleProps } from "../../../../helpers/types";
 
 type FormAddCarProps = {
-    handleSubmit: (values: FieldType) => void;
+    handleSubmit: (values: VehicleProps) => void;
     setActiveModal: (status: boolean) => void;
     form: FormInstance;
 };
@@ -26,6 +26,8 @@ export const FormAddCar: React.FC<FormAddCarProps> = ({
                 mode: "",
                 year: 2000,
                 brand: "",
+                conservation: 0,
+                description: "",
                 sold: false,
             }}
         >
@@ -45,7 +47,7 @@ export const FormAddCar: React.FC<FormAddCarProps> = ({
                 />
             </Form.Item>
 
-            <Form.Item
+            <Form.Item<number>
                 name="year"
                 rules={[
                     {
@@ -75,6 +77,33 @@ export const FormAddCar: React.FC<FormAddCarProps> = ({
                     className="h-10"
                     placeholder="Digite a fabricante do vaiculo"
                 />
+            </Form.Item>
+            <Form.Item
+                name="description"
+                rules={[
+                    {
+                        required: true,
+                        message: "Por favor, insira a descrição do veiculo!",
+                    },
+                ]}
+            >
+                <Input
+                    type="text"
+                    className="h-10"
+                    placeholder="Digite uma descrição para o veiculo"
+                />
+            </Form.Item>
+            <Form.Item
+                name="conservation"
+                rules={[
+                    {
+                        required: true,
+                        message:
+                            "Por favor, insira o nivel de conservação do veiculo!",
+                    },
+                ]}
+            >
+                <Slider />
             </Form.Item>
 
             <Form.Item name="sold" valuePropName="checked">
