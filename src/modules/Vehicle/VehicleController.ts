@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CarsRepository } from "../repositorys/cars.repositoy";
+import { CarsRepository } from "./VehicleRepository";
 
 const carsRepository = new CarsRepository();
 export class CarsController {

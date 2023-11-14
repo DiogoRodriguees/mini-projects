@@ -7,15 +7,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Car {
-  id      Int      @id @default(autoincrement())
-  veiculo String
-  marca   String
-  ano     Int
-  desc    String
-  vendido Boolean
-  created DateTime @default(now())
-  updated DateTime @updatedAt
+model Vehicle {
+  id           Int      @id @default(autoincrement())
+  model        String
+  brand        String
+  year         Int
+  conservation Int
+  description  String
+  sold         Boolean
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
 
-  @@map("cars")
+  @@map("vehicle")
 }
