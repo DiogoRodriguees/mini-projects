@@ -2,7 +2,7 @@ import { Button, Flex, Input, Modal } from "antd";
 import { useForm } from "antd/es/form/Form";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { CardList } from "../../../components/CardList";
+import { CardVehicle } from "../../../components/CardVehicle";
 import { ListCardProps, VehicleProps } from "../../../helpers/types";
 import { FormAddCar } from "../components/Form";
 
@@ -64,7 +64,11 @@ export const ListVehicle: React.FC<ListCardProps> = ({ showDetails }) => {
                 </Modal>
             </Flex>
 
-            <CardList vehicles={vehicles} showDetails={showDetails} />
+            <Flex vertical className="h-5/6 gap-6 px-4 overflow-y-scroll ">
+                {vehicles.map((vehicle: VehicleProps) => (
+                    <CardVehicle vehicle={vehicle} showDetails={showDetails} />
+                ))}
+            </Flex>
 
             <Button
                 className="bg-blue-500 h-12  ml-4 w-12 text-3xl"

@@ -1,5 +1,6 @@
-import { Button, Card, Col, Flex, Progress, Typography } from "antd";
+import { Button, Col, Flex, Progress, Typography } from "antd";
 import { CardDetailProps } from "../../helpers/types";
+import { CardGeneric } from "../Card/Card";
 
 export const CardDetail: React.FC<CardDetailProps> = ({
     vehicle,
@@ -13,11 +14,11 @@ export const CardDetail: React.FC<CardDetailProps> = ({
     };
 
     return (
-        <Card className="bg-white w-full px-10 py-8 flex flex-col justify-between rounded-md shadow-md ">
+        <CardGeneric>
             <Col>
                 <Flex className="justify-between items-center">
                     <Typography.Text className="text-4xl">
-                        {vehicle.brand} - {vehicle.name}
+                        {vehicle.brand} - {vehicle.model}
                     </Typography.Text>
                     <Typography.Text className="text-4xl">
                         Modelo: {vehicle.year}
@@ -46,6 +47,6 @@ export const CardDetail: React.FC<CardDetailProps> = ({
                     </Button>
                 </Flex>
             </Col>
-        </Card>
+        </CardGeneric>
     );
 };
