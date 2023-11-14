@@ -5,3 +5,5 @@ export interface Car {
     desc: string;
     vendido: boolean;
 }
+
+export interface CarsReturn {}
