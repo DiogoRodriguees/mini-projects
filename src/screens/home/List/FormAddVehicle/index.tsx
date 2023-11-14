@@ -7,7 +7,7 @@ type FormAddCarProps = {
     form: FormInstance;
 };
 
-export const FormAddCar: React.FC<FormAddCarProps> = ({
+export const FormAddVehicle: React.FC<FormAddCarProps> = ({
     handleSubmit,
     setActiveModal,
     form,

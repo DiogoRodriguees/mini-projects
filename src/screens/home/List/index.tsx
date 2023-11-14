@@ -4,13 +4,22 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { CardVehicle } from "../../../components/CardVehicle";
 import { ListCardProps, VehicleProps } from "../../../helpers/types";
-import { FormAddCar } from "../components/Form";
+import { FormAddVehicle } from "./FormAddVehicle";
 
 export const ListVehicle: React.FC<ListCardProps> = ({ showDetails }) => {
     const [activeModal, setActiveModal] = useState(false);
     const [form] = useForm();
     const [searchContent, setSearchContent] = useState<string>("");
     const [vehicles, setVehicles] = useState<VehicleProps[]>([]);
+
+    const getVehiclesByParams = async () => {
+        axios
+            .create({ baseURL: "http://localhost:3030", timeout: 1000 })
+            .get(`/cars/find?find=${searchContent || ""}`)
+            .then((e) => {
+                setVehicles(e.data);
+            });
+    };
 
     const handleSubmit = (values: VehicleProps) => {
         axios
@@ -19,25 +28,12 @@ export const ListVehicle: React.FC<ListCardProps> = ({ showDetails }) => {
 
         form.resetFields();
         setActiveModal(false);
+        setSearchContent("");
     };
-
-    const getVehiclesByParams = async () => {
-        axios
-            .create({ baseURL: "http://localhost:3030", timeout: 1000 })
-            .get(`/cars/find?find=${searchContent}`)
-            .then((e) => {
-                setVehicles(e.data);
-            });
-    };
-
-    function handleOnChange(value: string) {
-        setSearchContent(value);
-        getVehiclesByParams();
-    }
 
     useEffect(() => {
         getVehiclesByParams();
-    }, []);
+    }, [searchContent]);
 
     return (
         <Flex vertical className="gap-6 h-full">
@@ -45,7 +41,7 @@ export const ListVehicle: React.FC<ListCardProps> = ({ showDetails }) => {
                 <Input
                     placeholder="Pesquisar Veículo"
                     defaultValue={""}
-                    onChange={(e) => handleOnChange(e.target.value)}
+                    onChange={(e) => setSearchContent(e.target.value)}
                     className="text-lg px-4 h-12 w-ful"
                 />
 
@@ -56,7 +52,7 @@ export const ListVehicle: React.FC<ListCardProps> = ({ showDetails }) => {
                     onCancel={() => setActiveModal(!activeModal)}
                     footer={[]}
                 >
-                    <FormAddCar
+                    <FormAddVehicle
                         form={form}
                         handleSubmit={handleSubmit}
                         setActiveModal={setActiveModal}
