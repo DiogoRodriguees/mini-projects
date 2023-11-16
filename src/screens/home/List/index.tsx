@@ -29,6 +29,7 @@ export const ListVehicle: React.FC<ListCardProps> = ({ showDetails }) => {
         form.resetFields();
         setActiveModal(false);
         setSearchContent("");
+        getVehiclesByParams();
     };
 
     useEffect(() => {
