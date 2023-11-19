@@ -1,8 +1,15 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from "tailwindcss/defaultTheme";
+
 export default {
-    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-    theme: {
-        extend: {},
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        body: ['"Montserrat"', ...defaultTheme.fontFamily.sans],
+      },
     },
-    plugins: [],
+  },
+  plugins: [],
 };
