@@ -1,5 +1,15 @@
-import { Checkbox, Col, Flex, Row, Typography } from "antd";
-import React from "react";
+import {
+  Button,
+  Checkbox,
+  Col,
+  Flex,
+  Form,
+  Input,
+  Modal,
+  Row,
+  Typography,
+} from "antd";
+import React, { useState } from "react";
 import Chart from "react-google-charts";
 import DoubleArrow from "../../assets/icons/DoubleArrow";
 import DownArrow from "../../assets/icons/DownArrow";
@@ -83,21 +93,65 @@ const example = [
 
 const data = [
   ["Resumo", "valor"],
-  ["Entrada", 1500.0],
-  ["Saida", 350.85],
+  ["Entradas", 1500.0],
+  ["Saidas", 350.85],
 ];
 
 export const Home: React.FC = () => {
-  const handleAddInput = () => {
-    alert("Nova Entrada");
-  };
-  const handleAddOutput = () => {
-    alert("Nova Saida");
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [titleModal, setTitleModal] = useState("");
+
+  function onFinish() {
+    setIsModalOpen(false);
+  }
+
+  function handleAddOutput() {
+    setTitleModal("Nova Saída");
+    setIsModalOpen(true);
+  }
+
+  function handleAddInput() {
+    setTitleModal("Nova Entrada");
+    setIsModalOpen(true);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
+  }
 
   return (
     <Flex className="p-16 gap-10 h-screen bg-slate-50 font-sans">
-      <Flex className="gap-16" vertical>
+      <Modal
+        title={titleModal}
+        onOk={onFinish}
+        open={isModalOpen}
+        onCancel={closeModal}
+        footer={[]}
+      >
+        <Form
+          name="basic"
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={handleAddInput}
+          autoComplete="off"
+          layout="vertical"
+        >
+          <Form.Item label="Valor">
+            <Input type="number" />
+          </Form.Item>
+
+          <Form.Item label="Descrição">
+            <Input type="text" />
+          </Form.Item>
+
+          <Form.Item>
+            <Flex className="justify-end w-full">
+              <Button htmlType="submit">Salvar</Button>
+            </Flex>
+          </Form.Item>
+        </Form>
+      </Modal>
+      <Flex className="gap-10" vertical>
         <Flex className="gap-16">
           <Card
             onClick={handleAddInput}
@@ -113,6 +167,7 @@ export const Home: React.FC = () => {
           />
           <Card type="Total" value={1149.15} icon={<DoubleArrow />} />
         </Flex>
+
         <Col className="w-full bg-white h-full py-6 px-6 shadow-lg rounded-xl font-body">
           <Row className="h-12 px-2 items-center font-bold hover:cursor-default">
             <Col span={1}></Col>
@@ -158,6 +213,7 @@ export const Home: React.FC = () => {
           </Col>
         </Col>
       </Flex>
+
       <Flex
         className="bg-white shadow-lg gap-4 w-full p-10 rounded-xl hover:cursor-default"
         vertical
@@ -211,6 +267,7 @@ export const Home: React.FC = () => {
             </Row>
           </Col>
         </Flex>
+
         <Flex className="w-full h-2/4 p-6">
           <Chart
             className=""
