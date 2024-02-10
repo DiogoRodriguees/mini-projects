@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.display {
+    height: 60px;
+    width: 200px;
+
+    background-color:rgb(217, 227, 236);
+
+}
+.container{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 250px;
+    height: 340px;
+    padding: 10px;
+    margin: 100px auto;
+
+    user-select: none;
+    background-color: black;
+}
+
+.botao {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(25, 111, 240);
+}
+
+.botao:hover{
+    background-color: rgb(217, 227, 236);
+}
+
